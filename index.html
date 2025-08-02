@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ANXIETY — Eau de Stress | Luxury Fragrance</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">ANXIETY</div>
+            <ul class="nav-menu">
+                <li><a href="#product">Product</a></li>
+                <li><a href="#ingredients">Ingredients</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#buy" class="buy-now">Buy Now</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">FEEL YOUR WORST.<br>LOOK YOUR BEST.</h1>
+                <p class="hero-subtitle">The scent of 3AM breakdowns and morning meetings.</p>
+            </div>
+            <div class="hero-image">
+                <img src="img/anxiety-bottle.png" alt="ANXIETY Eau de Stress Perfume Bottle" class="perfume-bottle">
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Section -->
+    <section id="product" class="product-section">
+        <div class="container">
+            <div class="product-content">
+                <h2 class="section-title">ANXIETY Eau de Stress</h2>
+                <div class="product-details">
+                    <div class="product-info">
+                        <h3>50 ml / 1.7 fl.oz.</h3>
+                        <p class="product-description">
+                            Crafted for the overachiever in you.<br>
+                            Infused with imposter syndrome and guilt.
+                        </p>
+                        <button class="cta-button" onclick="scrollToBuy()">BUY NOW</button>
+                    </div>
+                    <div class="product-image">
+                        <img src="img/anxiety-bottle.png" alt="ANXIETY Perfume Bottle" class="product-bottle">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ingredients Section -->
+    <section id="ingredients" class="ingredients-section">
+        <div class="container">
+            <h2 class="section-title">Ingredients</h2>
+            <div class="ingredients-grid">
+                <div class="ingredient-item">
+                    <div class="ingredient-icon">🌪️</div>
+                    <h3>Burnout Extract</h3>
+                    <p>The essence of 80-hour work weeks</p>
+                </div>
+                <div class="ingredient-item">
+                    <div class="ingredient-icon">💼</div>
+                    <h3>Social Pressure Oil</h3>
+                    <p>Distilled from LinkedIn notifications</p>
+                </div>
+                <div class="ingredient-item">
+                    <div class="ingredient-icon">🌙</div>
+                    <h3>Midnight Overthinking</h3>
+                    <p>Harvested at 3AM existential crises</p>
+                </div>
+                <div class="ingredient-item">
+                    <div class="ingredient-icon">💧</div>
+                    <h3>Capitalist Tears</h3>
+                    <p>Collected from performance reviews</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials-section">
+        <div class="container">
+            <h2 class="section-title">Testimonials</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-avatar">JR</div>
+                    <p class="testimonial-text">"I sprayed it before my thesis defense. I cried stylishly."</p>
+                    <h4 class="testimonial-author">Jessica R.</h4>
+                    <p class="testimonial-title">PhD Candidate</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-avatar">MT</div>
+                    <p class="testimonial-text">"Smells like deadlines and self-loathing. Love it."</p>
+                    <h4 class="testimonial-author">Max T.</h4>
+                    <p class="testimonial-title">Startup Founder</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-avatar">SK</div>
+                    <p class="testimonial-text">"Finally, a fragrance that matches my inner turmoil."</p>
+                    <h4 class="testimonial-author">Sarah K.</h4>
+                    <p class="testimonial-title">Marketing Director</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section id="buy" class="cta-section">
+        <div class="container">
+            <h2 class="section-title">Join thousands who've masked their breakdowns in luxury.</h2>
+            <div class="newsletter-form">
+                <input type="email" placeholder="Enter your email" class="email-input" id="emailInput">
+                <button class="notify-button" onclick="showNotification()">Notify Me When I'm Calm</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="#">About</a>
+                    <a href="#">Contact</a>
+                    <a href="#">Terms of Stress</a>
+                </div>
+                <div class="footer-copyright">
+                    © 2025 ANXIETY Fragrance. Stress sold separately.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal -->
+    <div id="notificationModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>Thank you for your interest</h3>
+            <p>We'll get back to you after your next panic attack.</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
