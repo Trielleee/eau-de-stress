@@ -1,0 +1,91 @@
+/* GitHub Pages 兼容性修复 */
+
+/* 3D Flip Card 浏览器前缀修复 */
+.testimonial-card {
+    -webkit-perspective: 1000px;
+    -moz-perspective: 1000px;
+    perspective: 1000px;
+    width: 100%;
+    height: 280px; /* 替代 aspect-ratio */
+    margin: 0 auto;
+}
+
+.product-card {
+    -webkit-perspective: 1200px;
+    -moz-perspective: 1200px;
+    perspective: 1200px;
+    width: 100%;
+    height: 350px; /* 替代 aspect-ratio */
+    margin: 0 auto;
+}
+
+.ingredient-card {
+    -webkit-perspective: 1000px;
+    -moz-perspective: 1000px;
+    perspective: 1000px;
+    width: 100%;
+    height: 250px; /* 替代 aspect-ratio */
+    margin: 0 auto;
+}
+
+/* 3D变换浏览器前缀 */
+.testimonial-card-inner,
+.product-card-inner,
+.ingredient-card-inner {
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-transition: -webkit-transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    -moz-transition: -moz-transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* 翻转效果浏览器前缀 */
+.testimonial-card:hover .testimonial-card-inner {
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+}
+
+.product-card:hover .product-card-inner {
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+}
+
+.ingredient-card:hover .ingredient-card-inner {
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+}
+
+/* 背面隐藏浏览器前缀 */
+.testimonial-front, .testimonial-back,
+.product-front, .product-back,
+.ingredient-front, .ingredient-back {
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+/* 背面旋转浏览器前缀 */
+.testimonial-back,
+.product-back,
+.ingredient-back {
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+}
+
+/* 响应式高度修复 */
+@media (max-width: 768px) {
+    .testimonial-card { height: 250px; }
+    .product-card { height: 300px; }
+    .ingredient-card { height: 220px; }
+}
+
+@media (max-width: 480px) {
+    .testimonial-card { height: 220px; }
+    .product-card { height: 280px; }
+    .ingredient-card { height: 200px; }
+}
