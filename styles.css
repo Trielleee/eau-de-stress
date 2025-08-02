@@ -169,6 +169,71 @@ body {
     gap: 60px;
     align-items: center;
     margin-top: 60px;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* 3D Flip Card for Product */
+.product-card {
+    perspective: 1200px;
+    width: 100%;
+    aspect-ratio: 1;
+    margin: 0 auto;
+}
+
+.product-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform-style: preserve-3d;
+    cursor: pointer;
+    min-height: 100%;
+}
+
+.product-card:hover .product-card-inner {
+    transform: rotateY(180deg);
+}
+
+.product-front, .product-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 20px;
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    overflow: visible;
+    text-align: center;
+}
+
+.product-front {
+    background: linear-gradient(135deg, #fff 0%, #f8f8f8 100%);
+    border: 1px solid #e0e0e0;
+}
+
+.product-back {
+    background: linear-gradient(135deg, #1a1a1a 0%, #333 100%);
+    color: #fff;
+    transform: rotateY(180deg);
+}
+
+.product-bottle {
+    max-width: 250px;
+    height: auto;
+    filter: drop-shadow(0 15px 30px rgba(0,0,0,0.1));
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover .product-bottle {
+    transform: scale(1.05);
 }
 
 .product-info h3 {
@@ -183,6 +248,57 @@ body {
     line-height: 1.8;
     margin-bottom: 40px;
     color: #333;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.product-back .product-info h3 {
+    color: #fff;
+    margin-bottom: 20px;
+    font-size: 1.3rem;
+}
+
+.product-back .product-description {
+    color: #ccc;
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.product-specs {
+    margin-top: 20px;
+    text-align: left;
+    width: 100%;
+}
+
+.product-specs h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    margin-bottom: 12px;
+    color: #fff;
+}
+
+.product-specs ul {
+    list-style: none;
+    padding: 0;
+}
+
+.product-specs li {
+    padding: 6px 0;
+    border-bottom: 1px solid #444;
+    color: #ccc;
+    font-size: 0.85rem;
+}
+
+.product-specs li:last-child {
+    border-bottom: none;
+}
+
+.product-specs strong {
+    color: #fff;
+    font-weight: 600;
 }
 
 .cta-button {
@@ -204,10 +320,27 @@ body {
     transform: translateY(-2px);
 }
 
-.product-bottle {
-    max-width: 250px;
-    height: auto;
-    filter: drop-shadow(0 15px 30px rgba(0,0,0,0.1));
+.product-back .cta-button {
+    border-color: #fff;
+    color: #fff;
+}
+
+.product-back .cta-button:hover {
+    background: #fff;
+    color: #1a1a1a;
+}
+
+.product-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+    .product-image {
+        margin-top: 0;
+    }
 }
 
 /* Ingredients Section */
@@ -223,6 +356,105 @@ body {
     margin-top: 60px;
 }
 
+/* 3D Flip Card Styles */
+.ingredient-card {
+    perspective: 1000px;
+    width: 100%;
+    aspect-ratio: 1;
+    margin: 0 auto;
+}
+
+.ingredient-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform-style: preserve-3d;
+    cursor: pointer;
+}
+
+.ingredient-card:hover .ingredient-card-inner {
+    transform: rotateY(180deg);
+}
+
+.ingredient-front, .ingredient-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 15px;
+    padding: 25px 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.ingredient-front {
+    background: linear-gradient(135deg, #fff 0%, #f8f8f8 100%);
+    border: 1px solid #e0e0e0;
+}
+
+.ingredient-back {
+    background: linear-gradient(135deg, #1a1a1a 0%, #333 100%);
+    color: #fff;
+    transform: rotateY(180deg);
+}
+
+.ingredient-icon {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease;
+}
+
+.ingredient-card:hover .ingredient-icon {
+    transform: scale(1.1);
+}
+
+.ingredient-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: #1a1a1a;
+}
+
+.ingredient-description {
+    font-size: 0.9rem;
+    color: #666;
+    font-style: italic;
+    line-height: 1.5;
+}
+
+.ingredient-back .ingredient-title {
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.ingredient-back .ingredient-description {
+    color: #ccc;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.ingredient-details {
+    margin-top: 15px;
+    font-size: 0.8rem;
+    color: #aaa;
+    line-height: 1.3;
+}
+
+.ingredient-details strong {
+    color: #fff;
+    font-weight: 600;
+}
+
+/* 保留原有的ingredient-item样式作为备用 */
 .ingredient-item {
     text-align: center;
     padding: 40px 20px;
@@ -234,11 +466,6 @@ body {
 
 .ingredient-item:hover {
     transform: translateY(-5px);
-}
-
-.ingredient-icon {
-    font-size: 3rem;
-    margin-bottom: 20px;
 }
 
 .ingredient-item h3 {
@@ -261,22 +488,63 @@ body {
 
 .testimonials-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 40px;
     margin-top: 60px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
+/* 3D Flip Card Styles for Testimonials */
 .testimonial-card {
-    text-align: center;
-    padding: 40px 30px;
-    background: #fafafa;
-    border-radius: 8px;
-    border: 1px solid #e0e0e0;
-    transition: transform 0.3s ease;
+    perspective: 1000px;
+    width: 100%;
+    aspect-ratio: 1;
+    margin: 0 auto;
 }
 
-.testimonial-card:hover {
-    transform: translateY(-5px);
+.testimonial-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform-style: preserve-3d;
+    cursor: pointer;
+    min-height: 100%;
+}
+
+.testimonial-card:hover .testimonial-card-inner {
+    transform: rotateY(180deg);
+}
+
+.testimonial-front, .testimonial-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 15px;
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    overflow: visible;
+    text-align: center;
+}
+
+.testimonial-front {
+    background: linear-gradient(135deg, #fafafa 0%, #f0f0f0 100%);
+    border: 1px solid #e0e0e0;
+}
+
+.testimonial-back {
+    background: linear-gradient(135deg, #1a1a1a 0%, #333 100%);
+    color: #fff;
+    transform: rotateY(180deg);
 }
 
 .testimonial-avatar {
@@ -291,21 +559,32 @@ body {
     margin: 0 auto 20px;
     font-weight: 600;
     font-size: 18px;
+    transition: transform 0.3s ease;
+}
+
+.testimonial-card:hover .testimonial-avatar {
+    transform: scale(1.1);
 }
 
 .testimonial-text {
     font-size: 1.1rem;
     line-height: 1.6;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
     font-style: italic;
     color: #333;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    white-space: normal;
 }
 
 .testimonial-author {
     font-family: 'Playfair Display', serif;
     font-size: 1.2rem;
-    margin-bottom: 5px;
+    margin-bottom: 8px;
     color: #1a1a1a;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 .testimonial-title {
@@ -313,6 +592,65 @@ body {
     font-size: 0.9rem;
     text-transform: uppercase;
     letter-spacing: 1px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.testimonial-back .testimonial-text {
+    color: #ccc;
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.testimonial-back .testimonial-author {
+    color: #fff;
+    margin-bottom: 8px;
+    font-size: 1.1rem;
+}
+
+.testimonial-back .testimonial-title {
+    color: #aaa;
+    margin-bottom: 15px;
+    font-size: 0.8rem;
+}
+
+.testimonial-rating {
+    display: flex;
+    justify-content: center;
+    gap: 3px;
+    margin-bottom: 12px;
+}
+
+.testimonial-rating .star {
+    color: #ffd700;
+    font-size: 1rem;
+}
+
+.testimonial-date {
+    font-size: 0.7rem;
+    color: #999;
+    font-style: italic;
+}
+
+.testimonial-back .testimonial-date {
+    color: #888;
+}
+
+/* 保留原有的testimonial-card样式作为备用 */
+.testimonial-card-old {
+    text-align: center;
+    padding: 40px 30px;
+    background: #fafafa;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+    transition: transform 0.3s ease;
+}
+
+.testimonial-card-old:hover {
+    transform: translateY(-5px);
 }
 
 /* CTA Section */
@@ -479,6 +817,7 @@ body {
     .product-details {
         grid-template-columns: 1fr;
         text-align: center;
+        gap: 40px;
     }
     
     .section-title {
@@ -498,6 +837,66 @@ body {
     .footer-links {
         justify-content: center;
     }
+    
+    /* 移动端3D卡片调整 */
+    .ingredient-card {
+        aspect-ratio: 1;
+    }
+    
+    .ingredient-front, .ingredient-back {
+        padding: 20px 15px;
+    }
+    
+    .ingredient-icon {
+        font-size: 2.5rem;
+    }
+    
+    .ingredient-title {
+        font-size: 1.1rem;
+    }
+    
+    /* 移动端Testimonials卡片调整 */
+    .testimonial-card {
+        aspect-ratio: 1;
+    }
+    
+    .testimonial-front, .testimonial-back {
+        padding: 25px 15px;
+    }
+    
+    .testimonial-avatar {
+        width: 50px;
+        height: 50px;
+        font-size: 16px;
+    }
+    
+    .testimonial-text {
+        font-size: 0.9rem;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+    
+    /* 移动端Product卡片调整 */
+    .product-card {
+        aspect-ratio: 1;
+    }
+    
+    .product-front, .product-back {
+        padding: 25px 15px;
+    }
+    
+    .product-specs {
+        margin-top: 20px;
+    }
+    
+    .product-specs h4 {
+        font-size: 1rem;
+    }
+    
+    .product-specs li {
+        font-size: 0.8rem;
+        padding: 6px 0;
+    }
 }
 
 @media (max-width: 480px) {
@@ -516,5 +915,55 @@ body {
     .ingredients-grid,
     .testimonials-grid {
         grid-template-columns: 1fr;
+    }
+    
+    /* 小屏幕3D卡片进一步调整 */
+    .ingredient-card {
+        aspect-ratio: 1;
+    }
+    
+    .ingredient-icon {
+        font-size: 2rem;
+    }
+    
+    .ingredient-title {
+        font-size: 1rem;
+    }
+    
+    .ingredient-description {
+        font-size: 0.75rem;
+    }
+    
+    /* 小屏幕Testimonials卡片调整 */
+    .testimonial-card {
+        aspect-ratio: 1;
+    }
+    
+    .testimonial-avatar {
+        width: 45px;
+        height: 45px;
+        font-size: 14px;
+    }
+    
+    .testimonial-text {
+        font-size: 0.8rem;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+    
+    .testimonial-back .testimonial-text {
+        font-size: 0.9rem;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+    
+    /* 小屏幕Product卡片调整 */
+    .product-card {
+        aspect-ratio: 1;
+    }
+    
+    .product-specs li {
+        font-size: 0.7rem;
+        padding: 4px 0;
     }
 } 
